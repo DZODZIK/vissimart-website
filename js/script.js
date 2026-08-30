@@ -580,4 +580,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (ok) ok.hidden = false;
     });
   }
+
+  document.querySelectorAll('img').forEach((img) => {
+    img.setAttribute('draggable', 'false');
+  });
+  const protectSel = 'img, .art-card-image, .art-thumbs, .modal-image, .modal-thumbs, .about-image, .prints-grid';
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.closest && e.target.closest(protectSel) && !e.target.closest('.logo')) {
+      e.preventDefault();
+    }
+  });
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
 });
