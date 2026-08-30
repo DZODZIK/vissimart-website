@@ -1,20 +1,25 @@
-VISSIMART — aktualizácia 30. 8. 2026
-====================================
-NOVÉ: DIČ 1131372341 je v súboroch gdpr.html a vop.html
-(medzi menom a e-mailom).
+VISSIMART – webová stránka
+==========================
 
-Otvorte index.html v prehliadači.
-SK/EN je vpravo hore.
+Ako otvoriť
+-----------
+1. Rozbaľte tento ZIP.
+2. Otvorte súbor index.html v prehliadači (dvojklik).
+3. Prepínač SK / EN je vpravo hore.
 
-index.html    Domov
-about.html    O mne
-gallery.html  Galéria
-custom.html   Obraz na mieru
-prints.html   Printy
-contact.html  Kontakt
-gdpr.html     GDPR   ← obsahuje DIČ
-vop.html      VOP    ← obsahuje DIČ
+Stránky
+-------
+index.html      Domov
+about.html      O mne
+gallery.html    Galéria (5 fotiek ku každému obrazu)
+custom.html     Obraz na mieru
+prints.html     Printy
+contact.html    Kontakt
+gdpr.html       Ochrana osobných údajov
+vop.html        Všeobecné obchodné podmienky
 
+Kontakt
+-------
+Mgr. Simona Visocká
 vissimartsk@gmail.com
 Instagram @vissim_art
-DIČ 1131372341

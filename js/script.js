@@ -1,93 +1,452 @@
+// Vissimart – Language switcher + Gallery modal
 
-(function () {
-  const body = document.body;
-  function setLang(lang) {
-    body.classList.remove('lang-sk', 'lang-en');
-    body.classList.add('lang-' + lang);
-    document.documentElement.lang = lang;
-    document.querySelectorAll('.lang-btn').forEach((b) => {
-      b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
+document.addEventListener('DOMContentLoaded', () => {
+  // ===== Language Switcher =====
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const savedLang = localStorage.getItem('vissimart-lang') || 'sk';
+
+  function setLanguage(lang) {
+    document.body.classList.remove('lang-sk', 'lang-en');
+    document.body.classList.add(`lang-${lang}`);
+    localStorage.setItem('vissimart-lang', lang);
+
+    langButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
     });
-    try { localStorage.setItem('vissimart-lang', lang); } catch (e) {}
   }
-  let lang = 'sk';
-  try { lang = localStorage.getItem('vissimart-lang') || 'sk'; } catch (e) {}
-  setLang(lang);
-  document.querySelectorAll('[data-set-lang]').forEach((btn) => {
-    btn.addEventListener('click', () => setLang(btn.getAttribute('data-set-lang')));
+
+  setLanguage(savedLang);
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const next = btn.getAttribute('data-set-lang');
+      if (next === 'sk' || next === 'en') setLanguage(next);
+    });
   });
-  const toggle = document.querySelector('.menu-toggle');
+
+  // ===== Mobile menu =====
+  const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
-  if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  }
 
-  document.addEventListener('contextmenu', (e) => {
-    if (e.target.closest('img, .art-photo, .protect')) e.preventDefault();
-  });
-  document.addEventListener('dragstart', (e) => {
-    if (e.target.closest('img')) e.preventDefault();
+  // ===== Gallery Modal =====
+  const modalOverlay = document.getElementById('art-modal');
+  const modalClose = document.querySelector('.modal-close');
+  const artCards = document.querySelectorAll('[data-art-id]');
+
+  // Artwork data (bilingual)
+  const artworks = {
+    'kamenicka': {
+      sk: {
+        title: 'Kamenická zlatá hodinka',
+        size: '50 × 50 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Jadro tohto obrazu tvorí majestátna zrúcanina Kamenického hradu, ktorú priamo osvetľujú teplé lúče zapadajúceho slnka. Panorámu dotvára presný geografický kontext – v pozadí sa črtá silueta Levočských vrchov, pred ktorými sa do priestoru týči známy masív Balažky. Vďaka modelovacej 3D paste hrad a skaly doslova vystupujú z plátna. Keď na obraz dopadne prirodzené alebo bočné svetlo, reliéf ožije a vytvára úžasnú dynamiku.',
+        price: '290 €',
+        available: true
+      },
+      en: {
+        title: 'Kamenica Golden Hour',
+        size: '50 × 50 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'The heart of this painting is the majestic ruin of Kamenica Castle, bathed in the warm rays of the setting sun. The panorama is completed by the precise geographical context – the silhouette of the Levoča Mountains in the background and the distinctive Balažka massif. Thanks to modeling 3D paste, the castle and rocks literally rise from the canvas. When natural or side light hits the painting, the relief comes alive and creates wonderful dynamism.',
+        price: '290 €',
+        available: true
+      }
+    },
+    'vysoka': {
+      sk: {
+        title: 'Kráľovná Tatier – Vysoká',
+        size: '45 × 55 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Obraz venovaný jednému z najikonickejších štítov – Vysokej, prezývanej Kráľovná Tatier. Zachytáva pohľad zo Zlomiskovej doliny nad Dračím hrebeňom. 3D pasta dala skalám a masívu reálnu hmatateľnú štruktúru. Reliéf vrhá skutočné tiene a prináša do interiéru autentickú atmosféru vysokohorskej prírody.',
+        price: '280 €',
+        available: true
+      },
+      en: {
+        title: 'Queen of the Tatras – Vysoká',
+        size: '45 × 55 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Dedicated to one of the most iconic peaks – Vysoká, known as the Queen of the Tatras. Captures the view from Zlomisková Valley above the Dragon Ridge. 3D paste gave the rocks and massif a real tactile structure. The relief casts real shadows and brings the authentic atmosphere of high mountain nature into the interior.',
+        price: '280 €',
+        available: true
+      }
+    },
+    'orava': {
+      sk: {
+        title: 'Letný večer na Orave',
+        size: '50 × 70 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Oravský hrad počas tichého letného podvečera. Obloha sa sfarbuje do sýtych odtieňov ružovej, fialovej a teplej oranžovej. 3D pasta dala hradným múrom a skalnému bralu hmatateľnú podobu, ktorá vystupuje z plátna a ožíva so svetlom.',
+        price: '395 €',
+        available: true
+      },
+      en: {
+        title: 'Summer Evening in Orava',
+        size: '50 × 70 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Orava Castle during a quiet summer evening. The sky turns into rich shades of pink, purple and warm orange. 3D paste gave the castle walls and rocky cliff a tangible form that rises from the canvas and comes alive with light.',
+        price: '395 €',
+        available: true
+      }
+    },
+    'belianska': {
+      sk: {
+        title: 'Belianska purpurová noc',
+        size: '55 × 100 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Veľkoformátový panoramatický obraz zimnej noci v Belianskych Tatrách. Dominantou sú zasnežené masívy Ždiarskej vidly a Havrana osvetlené ružovkastými odtieňmi polárnej žiary. 3D pasta vytvorila reálnu štruktúru vápencových hrebeňov.',
+        price: '490 €',
+        available: true
+      },
+      en: {
+        title: 'Belianske Purple Night',
+        size: '55 × 100 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Large panoramic painting of a winter night in the Belianske Tatras. Dominated by the snow-covered massifs of Ždiarska Vidla and Havran lit by the pinkish hues of the polar light. 3D paste created a real structure of the limestone ridges.',
+        price: '490 €',
+        available: true
+      }
+    },
+    'dumbier': {
+      sk: {
+        title: 'Ku hviezdam (Ďumbier)',
+        size: '60 × 70 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Pohľad na najvyšší vrchol Nízkych Tatier – Ďumbier – pri prechode dňa do noci. Teplé odtiene na horizonte a detailne vykreslená Mliečna dráha so súhvezdiami. 3D pasta na skaly a terén vytvára hmatateľnú hĺbku.',
+        price: '420 €',
+        available: true
+      },
+      en: {
+        title: 'To the Stars (Ďumbier)',
+        size: '60 × 70 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'View of the highest peak of the Low Tatras – Ďumbier – at the transition from day to night. Warm tones on the horizon and a detailed Milky Way with constellations. 3D paste on the rocks and terrain creates tangible depth.',
+        price: '420 €',
+        available: true
+      }
+    },
+    'beckov': {
+      sk: {
+        title: 'Po búrke (Hrad Beckov)',
+        size: '50 × 70 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Dramatická atmosféra tesne po silnej letnej búrke. Hrad Beckov na vápencovom brale, temné mračná a žiarivá dúha. Detail dažďových kvapiek v popredí. 3D pasta na skaly a múry vytvára silný reliéf.',
+        price: '390 €',
+        available: true
+      },
+      en: {
+        title: 'After the Storm (Beckov Castle)',
+        size: '50 × 70 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Dramatic atmosphere right after a strong summer storm. Beckov Castle on a limestone cliff, dark clouds and a radiant rainbow. Detail of raindrops in the foreground. 3D paste on rocks and walls creates a strong relief.',
+        price: '390 €',
+        available: true
+      }
+    },
+    'vlkolinec': {
+      sk: {
+        title: 'Živé dedičstvo (Vlkolínec)',
+        size: '50 × 70 cm',
+        technique: 'Klasická akrylová maľba na maliarskom plátne (bez 3D)',
+        desc: 'UNESCO osada Vlkolínec v srdci Liptova. Tradičné zrubové domčeky so šindľovými strechami v horskom prostredí. Klasická hladká maľba s dôrazom na svetlo, tiene a textúru dreva. Obraz prináša pocit domova a úcty k našim koreňom.',
+        price: '330 €',
+        available: true
+      },
+      en: {
+        title: 'Living Heritage (Vlkolínec)',
+        size: '50 × 70 cm',
+        technique: 'Classical acrylic painting on canvas (no 3D)',
+        desc: 'UNESCO village Vlkolínec in the heart of Liptov. Traditional log houses with shingle roofs in a mountain setting. Classical smooth painting focusing on light, shadow and wood texture. The painting brings a sense of home and respect for our roots.',
+        price: '330 €',
+        available: true
+      }
+    },
+    'lubovna': {
+      sk: {
+        title: 'Strážca severu (Ľubovniansky hrad)',
+        size: '50 × 70 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Ľubovniansky hrad ako strážca severu na vápencovom brale. Kontrast pokojnej zelenej krajiny s dramatickou zasneženou hradbou Vysokých Tatier v pozadí. 3D pasta na múry a skaly.',
+        price: '395 €',
+        available: true
+      },
+      en: {
+        title: 'Guardian of the North (Ľubovňa Castle)',
+        size: '50 × 70 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Ľubovňa Castle as the guardian of the north on a limestone cliff. Contrast of peaceful green landscape with the dramatic snow-covered barrier of the High Tatras in the background. 3D paste on walls and rocks.',
+        price: '395 €',
+        available: true
+      }
+    },
+    'skalisko': {
+      sk: {
+        title: 'Skalisko v mraze (Volovské vrchy)',
+        size: '50 × 70 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Ikonické Skalisko (Volovec) v mrazivom zimnom podvečeri. Zlato-oranžové lúče zapadajúceho slnka a drsný georeliéf s turistickým krížom a slovenskou vlajkou. Silný 3D reliéf.',
+        price: '380 €',
+        available: true
+      },
+      en: {
+        title: 'Skalisko in Frost (Volovské Mountains)',
+        size: '50 × 70 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Iconic Skalisko (Volovec) on a frosty winter evening. Golden-orange rays of the setting sun and rough terrain with a tourist cross and Slovak flag. Strong 3D relief.',
+        price: '380 €',
+        available: true
+      }
+    },
+    'rozsutec': {
+      sk: {
+        title: 'Jar pod Rozsutcom',
+        size: '60 × 60 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Skorá jar v Malej Fatre pod Veľkým Rozsutcom. Fialové kvety šafranu v popredí, svieža zeleň a dramatická ružovo-fialová obloha. 3D pasta na skalnú korunu Rozsutca.',
+        price: '380 €',
+        available: true
+      },
+      en: {
+        title: 'Spring under Rozsutec',
+        size: '60 × 60 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Early spring in Malá Fatra under Veľký Rozsutec. Purple crocus flowers in the foreground, fresh greenery and dramatic pink-purple sky. 3D paste on the rocky crown of Rozsutec.',
+        price: '380 €',
+        available: true
+      }
+    },
+    'trojkoruny': {
+      sk: {
+        title: 'Opar pod Troma korunami',
+        size: '60 × 60 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Ranná scenéria v Pieninách pri Trom korunách. Hustá nízka hmla a opar, cez ktorý presvitajú teplé lúče. Vodná hladina v popredí. 3D pasta na vápencové štíty.',
+        price: '390 €',
+        available: true
+      },
+      en: {
+        title: 'Mist under Three Crowns',
+        size: '60 × 60 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Morning scenery in the Pieniny near the Three Crowns. Dense low fog and mist through which warm rays shine. Water surface in the foreground. 3D paste on the limestone peaks.',
+        price: '390 €',
+        available: true
+      }
+    },
+    'spis': {
+      sk: {
+        title: 'Zrodený z hmly (Spišský hrad)',
+        size: '55 × 65 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Spišský hrad vynárajúci sa z tmavej valivej hmly. Kontrast jasnej modrej oblohy, éterického oparu a tmavých ihličnatých stromov. 3D pasta na historické múry.',
+        price: '380 €',
+        available: true
+      },
+      en: {
+        title: 'Born from the Fog (Spiš Castle)',
+        size: '55 × 65 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'Spiš Castle emerging from dark rolling fog. Contrast of clear blue sky, ethereal mist and dark coniferous trees. 3D paste on the historic walls.',
+        price: '380 €',
+        available: true
+      }
+    },
+    'krivan': {
+      sk: {
+        title: 'Nočný Kriváň',
+        size: '40 × 50 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Prvé dielo zo série „Dotkni sa Slovenska“. Majestátny Kriváň v nočnej scenérii s mesiacom v splne a hviezdnou oblohou. Silný 3D reliéf svahov.',
+        price: '150 €',
+        available: true
+      },
+      en: {
+        title: 'Night Kriváň',
+        size: '40 × 50 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'First work from the series “Touch Slovakia”. Majestic Kriváň in a night scene with a full moon and starry sky. Strong 3D relief of the slopes.',
+        price: '150 €',
+        available: true
+      }
+    },
+    'lev': {
+      sk: {
+        title: 'Neohrozený pohľad',
+        size: '40 × 50 cm',
+        technique: 'Klasická akrylová maľba (bez 3D)',
+        desc: 'Detailný portrét leva – kráľa zvierat. Absolútny pokoj a odhodlanie v očiach. Monochromatická tvár s bohatou hrivou a zlatými prasklinami v pozadí.',
+        price: '230 €',
+        available: true
+      },
+      en: {
+        title: 'Unflinching Gaze',
+        size: '40 × 50 cm',
+        technique: 'Classical acrylic painting (no 3D)',
+        desc: 'Detailed portrait of a lion – the king of animals. Absolute calm and determination in the eyes. Monochromatic face with rich mane and golden cracks in the background.',
+        price: '230 €',
+        available: true
+      }
+    }
+  };
+
+  let currentArtId = null;
+  let currentPhoto = 0;
+
+  function photoList(id) {
+    return [
+      'images/' + id + '.jpg',
+      'images/' + id + '-d2.jpg',
+      'images/' + id + '-d3.jpg',
+      'images/' + id + '-d4.jpg',
+      'images/' + id + '-d5.jpg',
+    ];
+  }
+
+  function setModalPhoto(index) {
+    if (!currentArtId) return;
+    const photos = photoList(currentArtId);
+    currentPhoto = (index + photos.length) % photos.length;
+    const photo = document.getElementById('modal-photo');
+    const count = document.getElementById('modal-count');
+    if (photo) photo.src = photos[currentPhoto];
+    if (count) count.textContent = (currentPhoto + 1) + ' / ' + photos.length;
+    document.querySelectorAll('#modal-thumbs img').forEach((img, i) => {
+      img.classList.toggle('active', i === currentPhoto);
+    });
+  }
+
+  function openModal(id) {
+    const lang = document.body.classList.contains('lang-en') ? 'en' : 'sk';
+    const art = artworks[id];
+    if (!art) return;
+
+    const data = art[lang];
+    currentArtId = id;
+    currentPhoto = 0;
+
+    const photo = document.getElementById('modal-photo');
+    if (photo) {
+      photo.src = 'images/' + id + '.jpg';
+      photo.alt = data.title;
+    }
+    const thumbs = document.getElementById('modal-thumbs');
+    if (thumbs) {
+      thumbs.innerHTML = photoList(id).map((src, i) =>
+        '<img src="' + src + '" data-idx="' + i + '" class="' + (i === 0 ? 'active' : '') + '" alt="">'
+      ).join('');
+      thumbs.querySelectorAll('img').forEach(img => {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setModalPhoto(Number(img.dataset.idx));
+        });
+      });
+    }
+    setModalPhoto(0);
+
+    document.getElementById('modal-title').textContent = data.title;
+    document.getElementById('modal-meta').textContent = `${data.size} · ${data.technique}`;
+    document.getElementById('modal-desc').textContent = data.desc;
+    document.getElementById('modal-price').textContent = data.available ? data.price : (lang === 'sk' ? 'Vypredané' : 'Sold');
+    document.getElementById('modal-price').classList.toggle('sold', !data.available);
+
+    const btn = document.getElementById('modal-cta');
+    if (data.available) {
+      btn.style.display = 'inline-block';
+      btn.href = `contact.html?art=${encodeURIComponent(data.title)}`;
+    } else {
+      btn.style.display = 'none';
+    }
+
+    modalOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  artCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(card.dataset.artId);
+    });
   });
 
-  document.querySelectorAll('.filter-btn').forEach((btn) => {
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+  }
+
+  const prevBtn = document.getElementById('modal-prev');
+  const nextBtn = document.getElementById('modal-next');
+  if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); setModalPhoto(currentPhoto - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); setModalPhoto(currentPhoto + 1); });
+
+  document.addEventListener('keydown', (e) => {
+    if (!modalOverlay || !modalOverlay.classList.contains('open')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowRight') setModalPhoto(currentPhoto + 1);
+    if (e.key === 'ArrowLeft') setModalPhoto(currentPhoto - 1);
+  });
+
+  // Gallery filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const f = btn.dataset.filter;
-      document.querySelectorAll('[data-category]').forEach((card) => {
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.gallery-grid .art-card').forEach(card => {
         const cats = (card.dataset.category || '').split(' ');
-        card.style.display = (f === 'all' || cats.includes(f)) ? '' : 'none';
+        if (filter === 'all' || cats.includes(filter)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
   });
 
-  const modal = document.getElementById('art-modal');
-  const modalImg = document.getElementById('modal-img');
-  const modalThumbs = document.getElementById('modal-thumbs');
-  const modalTitle = document.getElementById('modal-title');
-  const modalMeta = document.getElementById('modal-meta');
-  if (modal) {
-    document.querySelectorAll('.art-card[data-art-id]').forEach((card) => {
-      card.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = card.dataset.artId;
-        const photos = [0,2,3,4,5].map((n, i) => i === 0 ? `images/${id}.jpg` : `images/${id}-d${n}.jpg`);
-        // d2-d5: ids 2,3,4,5
-        const srcs = [`images/${id}.jpg`, `images/${id}-d2.jpg`, `images/${id}-d3.jpg`, `images/${id}-d4.jpg`, `images/${id}-d5.jpg`];
-        let i = 0;
-        function show(n) {
-          i = (n + srcs.length) % srcs.length;
-          modalImg.src = srcs[i];
-          modalThumbs.querySelectorAll('img').forEach((im, idx) => im.classList.toggle('on', idx === i));
-        }
-        modalTitle.innerHTML = card.dataset.titleSk
-          ? `<span data-lang="sk">${card.dataset.titleSk}</span><span data-lang="en">${card.dataset.titleEn}</span>`
-          : '';
-        modalMeta.textContent = card.dataset.meta || '';
-        modalThumbs.innerHTML = srcs.map((s) => `<img src="${s}" alt="">`).join('');
-        modalThumbs.querySelectorAll('img').forEach((im, idx) => im.addEventListener('click', () => show(idx)));
-        show(0);
-        modal.classList.add('open');
-      });
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookieOk = document.getElementById('cookie-ok');
+  try {
+    if (cookieBanner && localStorage.getItem('vissimart-consent') !== '1') {
+      cookieBanner.hidden = false;
+    }
+  } catch (e) {
+    if (cookieBanner) cookieBanner.hidden = false;
+  }
+  if (cookieOk && cookieBanner) {
+    cookieOk.addEventListener('click', () => {
+      try { localStorage.setItem('vissimart-consent', '1'); } catch (e) {}
+      cookieBanner.hidden = true;
     });
-    document.getElementById('modal-close')?.addEventListener('click', () => modal.classList.remove('open'));
-    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
   }
 
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      form.querySelectorAll('label, button[type="submit"]').forEach((el) => { el.style.display = 'none'; });
       const ok = document.getElementById('form-ok');
+      form.querySelectorAll('label, button[type="submit"]').forEach((el) => {
+        if (el.id !== 'form-ok') el.style.display = 'none';
+      });
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.style.display = 'none';
       if (ok) ok.hidden = false;
     });
   }
-  const cookieBanner = document.getElementById('cookie-banner');
-  const cookieOk = document.getElementById('cookie-ok');
-  try {
-    if (cookieBanner && localStorage.getItem('vissimart-consent') !== '1') cookieBanner.hidden = false;
-  } catch (e) {}
-  cookieOk?.addEventListener('click', () => {
-    try { localStorage.setItem('vissimart-consent', '1'); } catch (e) {}
-    if (cookieBanner) cookieBanner.hidden = true;
-  });
-})();
+});

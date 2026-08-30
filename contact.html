@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt – Vissimart</title>
-  <meta name="description" content="Kontakt">
+  <meta name="description" content="Kontaktujte Simonu Visockú.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.svg">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -15,7 +15,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">VISSIM<span>ART</span></a>
-      <button class="menu-toggle" type="button" aria-label="Menu">☰</button>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
       <nav class="nav">
         <a href="index.html" class="active"><span data-lang="sk">Domov</span><span data-lang="en">Home</span></a>
         <a href="about.html"><span data-lang="sk">O mne</span><span data-lang="en">About</span></a>
@@ -29,26 +29,36 @@
       </div>
     </div>
   </header>
-
   <section class="section">
-    <h1 class="section-title"><span data-lang="sk">Kontakt</span><span data-lang="en">Contact</span></h1>
-    <p class="section-subtitle"><span data-lang="sk">Napíšte mi ohľadom originálu, obrazu na mieru alebo printu.</span><span data-lang="en">Write to me about an original, a custom painting or a print.</span></p>
-    <p style="text-align:center;margin-top:1rem">
-      <a href="custom.html"><span data-lang="sk">Obraz na mieru</span><span data-lang="en">Custom painting</span></a> ·
-      <a href="prints.html"><span data-lang="sk">Printy</span><span data-lang="en">Prints</span></a>
-    </p>
+    <div class="section-inner text-center">
+      <h1 class="section-title"><span data-lang="sk">Kontakt</span><span data-lang="en">Contact</span></h1>
+      <p class="section-subtitle">
+        <span data-lang="sk">Napíšte mi ohľadom originálu, obrazu na mieru alebo printu.</span>
+        <span data-lang="en">Write to me about an original, a custom painting or a print.</span>
+      </p>
+      <p class="mt-2">
+        <a href="custom.html"><span data-lang="sk">Obraz na mieru</span><span data-lang="en">Custom painting</span></a>
+        ·
+        <a href="prints.html"><span data-lang="sk">Printy</span><span data-lang="en">Prints</span></a>
+      </p>
+    </div>
   </section>
-  <section id="formular" class="section form-wrap">
-    <div class="grid-2">
+<section id="formular" class="section" style="background:#ebe6dc">
+    <div class="contact-grid section-inner">
       <div>
         <h2><span data-lang="sk">Napíšte mi</span><span data-lang="en">Write to me</span></h2>
-        <p><span data-lang="sk">Formulár, e-mail alebo Instagram – ozvem sa vám s ponukou a ďalšími krokmi.</span><span data-lang="en">Form, e-mail or Instagram – I will get back to you with a proposal and next steps.</span></p>
+        <p data-lang="sk">Formulár, e-mail alebo Instagram – ozvem sa vám s ponukou a ďalšími krokmi.</p>
+        <p data-lang="en">Form, e-mail or Instagram – I will get back to you with a proposal and next steps.</p>
         <p>Email: <a href="mailto:vissimartsk@gmail.com">vissimartsk@gmail.com</a></p>
         <p>Instagram: <a href="https://www.instagram.com/vissim_art/" target="_blank" rel="noopener">@vissim_art</a></p>
       </div>
       <form class="contact-form" id="contact-form">
-        <label><span data-lang="sk">Meno</span><span data-lang="en">Name</span><input required name="name"></label>
-        <label>Email<input required type="email" name="email"></label>
+        <label><span data-lang="sk">Meno</span><span data-lang="en">Name</span>
+          <input required name="name">
+        </label>
+        <label>Email
+          <input required type="email" name="email">
+        </label>
         <label><span data-lang="sk">Predmet</span><span data-lang="en">Subject</span>
           <select name="subject">
             <option value="commission"><span data-lang="sk">Objednávka na mieru</span></option>
@@ -56,18 +66,31 @@
             <option value="interest"><span data-lang="sk">Záujem o originál</span></option>
           </select>
         </label>
-        <label><span data-lang="sk">Správa</span><span data-lang="en">Message</span><textarea required name="message" rows="6"></textarea></label>
-        <label class="check"><input required type="checkbox"><span data-lang="sk">Súhlasím so spracovaním údajov podľa GDPR a beriem na vedomie Všeobecné obchodné podmienky.</span><span data-lang="en">I agree to data processing under GDPR and acknowledge the terms and conditions.</span></label>
+        <label><span data-lang="sk">Správa</span><span data-lang="en">Message</span>
+          <textarea required name="message" rows="6"></textarea>
+        </label>
+        <label class="check">
+          <input required type="checkbox">
+          <span data-lang="sk">Súhlasím so spracovaním údajov podľa GDPR a beriem na vedomie VOP.</span>
+          <span data-lang="en">I agree to data processing under GDPR and acknowledge the terms (VOP).</span>
+        </label>
         <button class="btn" type="submit"><span data-lang="sk">Odoslať správu</span><span data-lang="en">Send message</span></button>
-        <p class="form-ok" id="form-ok" hidden><span data-lang="sk">Dakujem. Napiste mi aj na vissimartsk@gmail.com.</span><span data-lang="en">Thank you. You can also write to vissimartsk@gmail.com.</span></p>
+        <p class="form-ok" id="form-ok" hidden>
+          <span data-lang="sk">Ďakujem. Napíšte mi aj na vissimartsk@gmail.com.</span>
+          <span data-lang="en">Thank you. You can also write to vissimartsk@gmail.com.</span>
+        </p>
       </form>
     </div>
   </section>
+
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <p class="logo">VISSIM<span>ART</span></p>
-        <p><span data-lang="sk">Autorské 3D reliéfne obrazy inšpirované slovenskou prírodou a históriou.</span><span data-lang="en">Original 3D relief paintings inspired by Slovak nature and history.</span></p>
+    <div class="footer-inner footer-grid-4">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">VISSIM<span>ART</span></a>
+        <p>
+          <span data-lang="sk">Autorské 3D reliéfne obrazy inšpirované slovenskou prírodou a históriou.</span>
+          <span data-lang="en">Original 3D relief paintings inspired by Slovak nature and history.</span>
+        </p>
         <p>Mgr. Simona Visocká</p>
         <p>DIČ: 1131372341</p>
       </div>
@@ -76,13 +99,12 @@
         <a href="index.html"><span data-lang="sk">Domov</span><span data-lang="en">Home</span></a>
         <a href="about.html"><span data-lang="sk">O mne</span><span data-lang="en">About</span></a>
         <a href="gallery.html"><span data-lang="sk">Galéria</span><span data-lang="en">Gallery</span></a>
-        <a href="custom.html"><span data-lang="sk">Obraz na mieru</span><span data-lang="en">Custom painting</span></a>
+        <a href="contact.html"><span data-lang="sk">Na mieru</span><span data-lang="en">Custom</span></a>
         <a href="prints.html"><span data-lang="sk">Printy</span><span data-lang="en">Prints</span></a>
-        <a href="contact.html"><span data-lang="sk">Kontakt</span><span data-lang="en">Contact</span></a>
       </div>
       <div class="footer-links">
         <h4><span data-lang="sk">Právne informácie</span><span data-lang="en">Legal</span></h4>
-        <a href="gdpr.html"><span data-lang="sk">Ochrana osobných údajov (GDPR)</span><span data-lang="en">Privacy policy (GDPR)</span></a>
+        <a href="gdpr.html">GDPR</a>
         <a href="vop.html"><span data-lang="sk">Všeobecné obchodné podmienky</span><span data-lang="en">Terms and conditions</span></a>
       </div>
       <div class="footer-links">
@@ -92,13 +114,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      (c) 2026 Vissimart - Mgr. Simona Visocká -
-      <a href="gdpr.html">GDPR</a> ·
-      <a href="vop.html"><span data-lang="sk">Všeobecné obchodné podmienky</span><span data-lang="en">Terms and conditions</span></a>
+      © 2026 Vissimart · Mgr. Simona Visocká · <a href="gdpr.html">GDPR</a> · <a href="vop.html"><span data-lang="sk">Všeobecné obchodné podmienky</span><span data-lang="en">Terms and conditions</span></a>
     </div>
   </footer>
   <div class="cookie-banner" id="cookie-banner" hidden>
-    <p><span data-lang="sk">Ukladáme len nevyhnutné údaje: jazyk a vaše správy z formulára.</span><span data-lang="en">We only store what is necessary: language and your form messages.</span> <a href="gdpr.html">GDPR</a></p>
+    <p>
+      <span data-lang="sk">Ukladáme len nevyhnutné údaje: jazyk a vaše správy z formulára. Marketingové cookies nepoužívame.</span>
+      <span data-lang="en">We only store what is necessary: language and your form messages. We do not use marketing cookies.</span>
+      <a href="gdpr.html">GDPR</a>
+    </p>
     <button type="button" class="btn" id="cookie-ok"><span data-lang="sk">Rozumiem</span><span data-lang="en">I understand</span></button>
   </div>
   <script src="js/script.js"></script>
