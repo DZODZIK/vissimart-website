@@ -869,3 +869,12 @@ a {
   bottom: 10px;
 }
 
+.artwork-notice {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  border-left: 3px solid var(--color-gold);
+  padding-left: 0.85rem;
+}
+
