@@ -348,6 +348,24 @@ document.addEventListener('DOMContentLoaded', () => {
         available: false
       }
     },
+    'studena': {
+      sk: {
+        title: 'Tatranské ticho a mestský ruch (Malá Studená dolina)',
+        size: '50 × 70 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Tento obraz zachytáva jedinečný a magický kontrast medzi hlbokým tichom vysokohorskej prírody a vzdialeným ruchom civilizácie. Ústredným motívom je čarovná Malá Studená dolina, kde sa pod nočnou oblohou rozprestiera Nižné Spišské pleso, útulná Téryho chata a turistické značenie smerujúce na Sedielko. Nočnej scenérii dominujú detailne maľovaná Mliečna dráha a súhvezdia Orion, Eridanus, Ryby a Pegas, zatiaľ čo na obzore žiari osvetlená Popradská kotlina. Na stvárnenie surových skalných masívov a drsného terénu som vo veľkej miere využila modelovaciu 3D pastu. Skaly vďaka tomu získali reálnu, hmatateľnú štruktúru, ktorá fyzicky vystupuje z plátna. Keď si obraz zavesíte do interiéru a dopadne naň prirodzené denné svetlo alebo večerné bočné osvetlenie z lampy, táto 3D štruktúra naplno ožije. Reliéf začne vrhať skutočné tiene, vďaka čomu obraz získava úžasnú priestorovú hĺbku a prináša do miestnosti neopakovateľnú atmosféru nočných Tatier.',
+        price: '360 €',
+        available: true
+      },
+      en: {
+        title: 'Tatra Silence and City Lights (Malá Studená Valley)',
+        size: '50 × 70 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'This painting captures a unique, magical contrast between the deep silence of high-mountain nature and the distant bustle of civilisation. The central motif is Malá Studená dolina at night: Nižné Spišské pleso, Téryho chata and the trail sign towards Sedielko. The night sky is dominated by a detailed Milky Way and the constellations Orion, Eridanus, Pisces and Pegasus, while the lit Poprad basin glows on the horizon. Modeling 3D paste was used extensively on the raw rock massifs and rough terrain, so the rocks have a real, tactile structure that physically rises from the canvas. In daylight or evening side light the 3D structure comes fully alive, casts real shadows, and brings the unique atmosphere of the night Tatras into the room.',
+        price: '360 €',
+        available: true
+      }
+    },
     'lev': {
       sk: {
         title: 'Neohrozený pohľad',
