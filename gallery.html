@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria – Vissimart</title>
+  <meta name="description" content="Galeria 3D obrazov">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="lang-sk">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">VISSIM<span>ART</span></a>
+      <button class="menu-toggle" type="button" aria-label="Menu">☰</button>
+      <nav class="nav">
+        <a href="index.html"><span data-lang="sk">Domov</span><span data-lang="en">Home</span></a>
+        <a href="about.html"><span data-lang="sk">O mne</span><span data-lang="en">About</span></a>
+        <a href="gallery.html" class="active"><span data-lang="sk">Galéria</span><span data-lang="en">Gallery</span></a>
+        <a href="custom.html"><span data-lang="sk">Na mieru</span><span data-lang="en">Custom</span></a>
+        <a href="prints.html"><span data-lang="sk">Printy</span><span data-lang="en">Prints</span></a>
+      </nav>
+      <div class="lang-switch">
+        <button type="button" class="lang-btn active" data-set-lang="sk">SK</button>
+        <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h1 class="section-title"><span data-lang="sk">Galeria</span><span data-lang="en">Gallery</span></h1>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all"><span data-lang="sk">Vsetky</span><span data-lang="en">All</span></button>
+      <button class="filter-btn" data-filter="available"><span data-lang="sk">Dostupne</span><span data-lang="en">Available</span></button>
+      <button class="filter-btn" data-filter="unavailable"><span data-lang="sk">Nedostupne</span><span data-lang="en">Unavailable</span></button>
+      <button class="filter-btn" data-filter="3d">3D</button>
+      <button class="filter-btn" data-filter="classic"><span data-lang="sk">Klasicka malba</span><span data-lang="en">Classical</span></button>
+    </div>
+    <div class="grid grid-3">
+    <article class="art-card" data-art-id="kamenicka" data-category="available 3d" data-title-sk="Kamenická zlatá hodinka" data-title-en="Kamenica Golden Hour" data-meta="50 × 50 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/kamenicka.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/kamenicka.jpg" alt=""><img src="images/kamenicka-d2.jpg" alt=""><img src="images/kamenicka-d3.jpg" alt=""><img src="images/kamenicka-d4.jpg" alt=""><img src="images/kamenicka-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Kamenická zlatá hodinka</span><span data-lang="en">Kamenica Golden Hour</span></h3>
+        <p class="meta">50 × 50 cm - 3D</p>
+        <p class="price">290 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="vysoka" data-category="available 3d" data-title-sk="Kráľovná Tatier – Vysoká" data-title-en="Queen of the Tatras – Vysoká" data-meta="45 × 55 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/vysoka.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/vysoka.jpg" alt=""><img src="images/vysoka-d2.jpg" alt=""><img src="images/vysoka-d3.jpg" alt=""><img src="images/vysoka-d4.jpg" alt=""><img src="images/vysoka-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Kráľovná Tatier – Vysoká</span><span data-lang="en">Queen of the Tatras – Vysoká</span></h3>
+        <p class="meta">45 × 55 cm - 3D</p>
+        <p class="price">280 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="orava" data-category="available 3d" data-title-sk="Letný večer na Orave" data-title-en="Summer Evening in Orava" data-meta="50 × 70 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/orava.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/orava.jpg" alt=""><img src="images/orava-d2.jpg" alt=""><img src="images/orava-d3.jpg" alt=""><img src="images/orava-d4.jpg" alt=""><img src="images/orava-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Letný večer na Orave</span><span data-lang="en">Summer Evening in Orava</span></h3>
+        <p class="meta">50 × 70 cm - 3D</p>
+        <p class="price">395 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="belianska" data-category="available 3d" data-title-sk="Belianska purpurová noc" data-title-en="Belianske Purple Night" data-meta="55 × 100 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/belianska.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/belianska.jpg" alt=""><img src="images/belianska-d2.jpg" alt=""><img src="images/belianska-d3.jpg" alt=""><img src="images/belianska-d4.jpg" alt=""><img src="images/belianska-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Belianska purpurová noc</span><span data-lang="en">Belianske Purple Night</span></h3>
+        <p class="meta">55 × 100 cm - 3D</p>
+        <p class="price">490 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="dumbier" data-category="available 3d" data-title-sk="Ku hviezdam (Ďumbier)" data-title-en="To the Stars (Ďumbier)" data-meta="60 × 70 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/dumbier.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/dumbier.jpg" alt=""><img src="images/dumbier-d2.jpg" alt=""><img src="images/dumbier-d3.jpg" alt=""><img src="images/dumbier-d4.jpg" alt=""><img src="images/dumbier-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Ku hviezdam (Ďumbier)</span><span data-lang="en">To the Stars (Ďumbier)</span></h3>
+        <p class="meta">60 × 70 cm - 3D</p>
+        <p class="price">420 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="beckov" data-category="unavailable 3d" data-title-sk="Po búrke (Hrad Beckov)" data-title-en="After the Storm (Beckov Castle)" data-meta="50 × 70 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/beckov.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        <span class="badge sold"><span data-lang="sk">Vypredané</span><span data-lang="en">Sold</span></span>
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/beckov.jpg" alt=""><img src="images/beckov-d2.jpg" alt=""><img src="images/beckov-d3.jpg" alt=""><img src="images/beckov-d4.jpg" alt=""><img src="images/beckov-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Po búrke (Hrad Beckov)</span><span data-lang="en">After the Storm (Beckov Castle)</span></h3>
+        <p class="meta">50 × 70 cm - 3D</p>
+        <p class="price"><span data-lang="sk">Vypredané</span><span data-lang="en">Sold</span></p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="vlkolinec" data-category="unavailable classic" data-title-sk="Živé dedičstvo (Vlkolínec)" data-title-en="Living Heritage (Vlkolínec)" data-meta="50 × 70 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/vlkolinec.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        <span class="badge sold"><span data-lang="sk">Vypredané</span><span data-lang="en">Sold</span></span>
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/vlkolinec.jpg" alt=""><img src="images/vlkolinec-d2.jpg" alt=""><img src="images/vlkolinec-d3.jpg" alt=""><img src="images/vlkolinec-d4.jpg" alt=""><img src="images/vlkolinec-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Živé dedičstvo (Vlkolínec)</span><span data-lang="en">Living Heritage (Vlkolínec)</span></h3>
+        <p class="meta">50 × 70 cm - klasická</p>
+        <p class="price"><span data-lang="sk">Vypredané</span><span data-lang="en">Sold</span></p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="lubovna" data-category="unavailable 3d" data-title-sk="Strážca severu (Ľubovniansky hrad)" data-title-en="Guardian of the North (Ľubovňa Castle)" data-meta="50 × 70 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/lubovna.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        <span class="badge sold"><span data-lang="sk">Vypredané</span><span data-lang="en">Sold</span></span>
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/lubovna.jpg" alt=""><img src="images/lubovna-d2.jpg" alt=""><img src="images/lubovna-d3.jpg" alt=""><img src="images/lubovna-d4.jpg" alt=""><img src="images/lubovna-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Strážca severu (Ľubovniansky hrad)</span><span data-lang="en">Guardian of the North (Ľubovňa Castle)</span></h3>
+        <p class="meta">50 × 70 cm - 3D</p>
+        <p class="price"><span data-lang="sk">Vypredané</span><span data-lang="en">Sold</span></p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="skalisko" data-category="available 3d" data-title-sk="Skalisko v mraze" data-title-en="Skalisko in Frost" data-meta="50 × 70 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/skalisko.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/skalisko.jpg" alt=""><img src="images/skalisko-d2.jpg" alt=""><img src="images/skalisko-d3.jpg" alt=""><img src="images/skalisko-d4.jpg" alt=""><img src="images/skalisko-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Skalisko v mraze</span><span data-lang="en">Skalisko in Frost</span></h3>
+        <p class="meta">50 × 70 cm - 3D</p>
+        <p class="price">380 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="rozsutec" data-category="available 3d" data-title-sk="Jar pod Rozsutcom" data-title-en="Spring under Rozsutec" data-meta="60 × 60 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/rozsutec.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/rozsutec.jpg" alt=""><img src="images/rozsutec-d2.jpg" alt=""><img src="images/rozsutec-d3.jpg" alt=""><img src="images/rozsutec-d4.jpg" alt=""><img src="images/rozsutec-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Jar pod Rozsutcom</span><span data-lang="en">Spring under Rozsutec</span></h3>
+        <p class="meta">60 × 60 cm - 3D</p>
+        <p class="price">380 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="trojkoruny" data-category="available 3d" data-title-sk="Opar pod Troma korunami" data-title-en="Mist under Three Crowns" data-meta="60 × 60 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/trojkoruny.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/trojkoruny.jpg" alt=""><img src="images/trojkoruny-d2.jpg" alt=""><img src="images/trojkoruny-d3.jpg" alt=""><img src="images/trojkoruny-d4.jpg" alt=""><img src="images/trojkoruny-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Opar pod Troma korunami</span><span data-lang="en">Mist under Three Crowns</span></h3>
+        <p class="meta">60 × 60 cm - 3D</p>
+        <p class="price">390 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="spis" data-category="available 3d" data-title-sk="Zrodený z hmly (Spišský hrad)" data-title-en="Born from the Fog (Spiš Castle)" data-meta="55 × 65 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/spis.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/spis.jpg" alt=""><img src="images/spis-d2.jpg" alt=""><img src="images/spis-d3.jpg" alt=""><img src="images/spis-d4.jpg" alt=""><img src="images/spis-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Zrodený z hmly (Spišský hrad)</span><span data-lang="en">Born from the Fog (Spiš Castle)</span></h3>
+        <p class="meta">55 × 65 cm - 3D</p>
+        <p class="price">380 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="krivan" data-category="available 3d" data-title-sk="Nočný Kriváň" data-title-en="Night Kriváň" data-meta="40 × 50 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/krivan.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/krivan.jpg" alt=""><img src="images/krivan-d2.jpg" alt=""><img src="images/krivan-d3.jpg" alt=""><img src="images/krivan-d4.jpg" alt=""><img src="images/krivan-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Nočný Kriváň</span><span data-lang="en">Night Kriváň</span></h3>
+        <p class="meta">40 × 50 cm - 3D</p>
+        <p class="price">150 €</p>
+      </div>
+    </article>
+    
+
+    <article class="art-card" data-art-id="lev" data-category="available classic" data-title-sk="Neohrozený pohľad" data-title-en="Unflinching Gaze" data-meta="40 × 50 cm">
+      <div class="art-photo protect">
+        <img class="main" src="images/lev.jpg" alt="">
+        <span class="badge"><span data-lang="sk">5 fotiek</span><span data-lang="en">5 photos</span></span>
+        
+        <img class="watermark" src="watermark.png" alt="">
+      </div>
+      <div class="thumbs"><img src="images/lev.jpg" alt=""><img src="images/lev-d2.jpg" alt=""><img src="images/lev-d3.jpg" alt=""><img src="images/lev-d4.jpg" alt=""><img src="images/lev-d5.jpg" alt=""></div>
+      <div class="art-card-body">
+        <h3><span data-lang="sk">Neohrozený pohľad</span><span data-lang="en">Unflinching Gaze</span></h3>
+        <p class="meta">40 × 50 cm - klasická</p>
+        <p class="price">230 €</p>
+      </div>
+    </article>
+    </div>
+  </section>
+  <div class="modal" id="art-modal">
+    <div class="modal-inner protect">
+      <button class="modal-close" id="modal-close" type="button">x</button>
+      <img class="main" id="modal-img" alt="">
+      <img class="watermark" src="watermark.png" alt="" style="width:4.5rem">
+      <div class="thumbs" id="modal-thumbs"></div>
+      <h3 id="modal-title" style="color:#fffcf6;margin:.8rem 0 0"></h3>
+      <p id="modal-meta" style="color:#ccc;margin:.2rem 0 0"></p>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="logo">VISSIM<span>ART</span></p>
+        <p><span data-lang="sk">Autorské 3D reliéfne obrazy inšpirované slovenskou prírodou a históriou.</span><span data-lang="en">Original 3D relief paintings inspired by Slovak nature and history.</span></p>
+        <p>Mgr. Simona Visocká</p>
+        <p>DIČ: 1131372341</p>
+      </div>
+      <div class="footer-links">
+        <h4><span data-lang="sk">Navigácia</span><span data-lang="en">Navigation</span></h4>
+        <a href="index.html"><span data-lang="sk">Domov</span><span data-lang="en">Home</span></a>
+        <a href="about.html"><span data-lang="sk">O mne</span><span data-lang="en">About</span></a>
+        <a href="gallery.html"><span data-lang="sk">Galéria</span><span data-lang="en">Gallery</span></a>
+        <a href="custom.html"><span data-lang="sk">Obraz na mieru</span><span data-lang="en">Custom painting</span></a>
+        <a href="prints.html"><span data-lang="sk">Printy</span><span data-lang="en">Prints</span></a>
+        <a href="contact.html"><span data-lang="sk">Kontakt</span><span data-lang="en">Contact</span></a>
+      </div>
+      <div class="footer-links">
+        <h4><span data-lang="sk">Právne informácie</span><span data-lang="en">Legal</span></h4>
+        <a href="gdpr.html"><span data-lang="sk">Ochrana osobných údajov (GDPR)</span><span data-lang="en">Privacy policy (GDPR)</span></a>
+        <a href="vop.html"><span data-lang="sk">Všeobecné obchodné podmienky</span><span data-lang="en">Terms and conditions</span></a>
+      </div>
+      <div class="footer-links">
+        <h4><span data-lang="sk">Kontakt</span><span data-lang="en">Contact</span></h4>
+        <a href="mailto:vissimartsk@gmail.com">vissimartsk@gmail.com</a>
+        <a href="https://www.instagram.com/vissim_art/" target="_blank" rel="noopener">Instagram @vissim_art</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      (c) 2026 Vissimart - Mgr. Simona Visocká -
+      <a href="gdpr.html">GDPR</a> ·
+      <a href="vop.html"><span data-lang="sk">Všeobecné obchodné podmienky</span><span data-lang="en">Terms and conditions</span></a>
+    </div>
+  </footer>
+  <div class="cookie-banner" id="cookie-banner" hidden>
+    <p><span data-lang="sk">Ukladáme len nevyhnutné údaje: jazyk a vaše správy z formulára.</span><span data-lang="en">We only store what is necessary: language and your form messages.</span> <a href="gdpr.html">GDPR</a></p>
+    <button type="button" class="btn" id="cookie-ok"><span data-lang="sk">Rozumiem</span><span data-lang="en">I understand</span></button>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
