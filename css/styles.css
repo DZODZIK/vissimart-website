@@ -89,7 +89,7 @@ a {
 .site-header {
   background: var(--color-bg-dark);
   color: var(--color-text-light);
-  padding: 1rem 0;
+  padding: 0.45rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -113,16 +113,15 @@ a {
 }
 
 .logo img {
-  height: 52px;
+  height: 78px;
   width: auto;
   display: block;
-  background: #f5f3ef;
-  border-radius: 8px;
-  padding: 4px 10px;
+  background: transparent;
+  padding: 0;
 }
 
 .site-footer .logo img {
-  height: 56px;
+  height: 88px;
 }
 
 .nav {
