@@ -330,6 +330,24 @@ document.addEventListener('DOMContentLoaded', () => {
         available: false
       }
     },
+    'parohac': {
+      sk: {
+        title: 'Tatranský paroháč',
+        size: '50 × 50 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Tento obraz zachytáva divokú a tichú krásu Vysokých Tatier počas mrazivého dňa, kedy zasneženú scenériu a štíty hôr jemne zohrievajú teplé lúče zapadajúceho slnka. Ústredným motívom je majestátny jeleň stojaci v hlbokom snehu pri drevenom plote, ktorý dokonale dotvára atmosféru. Pozadiu dominuje impozantná a ostrá vysokohorská panoráma, v ktorej pozorné oko rozozná charakteristické siluety dvoch našich významných štítov – Končistej a Gerlachovského štítu. Na stvárnenie masívnych zasnežených štítov v pozadí a mrazivého terénu som vo veľkej miere využila modelovaciu 3D pastu. Hrebene a snehové záveje tak získali reálnu, hmatateľnú štruktúru, ktorá fyzicky vystupuje z plátna.',
+        price: 'Vypredané',
+        available: false
+      },
+      en: {
+        title: 'Tatra Stag',
+        size: '50 × 50 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'This painting captures the wild, quiet beauty of the High Tatras on a freezing day, when the snowy scenery and mountain peaks are gently warmed by the last rays of sunset. The central motif is a majestic stag standing in deep snow by a wooden fence. The background is a sharp high-mountain panorama where the silhouettes of Končistá and Gerlachovský štít can be recognised. Modeling 3D paste was used extensively on the massive snow-covered peaks and frozen terrain, so ridges and snowdrifts have a real, tactile structure that physically rises from the canvas.',
+        price: 'Sold',
+        available: false
+      }
+    },
     'lev': {
       sk: {
         title: 'Neohrozený pohľad',
