@@ -384,6 +384,24 @@ document.addEventListener('DOMContentLoaded', () => {
         available: false
       }
     },
+    'sulov': {
+      sk: {
+        title: 'Ranné Súľovky (Súľovské skaly)',
+        size: '50 × 50 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Tento obraz zachytáva čarovné a tiché ranné prebúdzanie v Súľovských skalách – jedinečnom geomorfologickom celku budovanom charakteristickými vápencovými ihlanmi, vežami a skalnými oknami. Scenérii dominuje hustá ranná inverzná hmla, z ktorej sa majestátne vynárajú ostré skalné útvary, zatiaľ čo vzdialený horizont v pozadí už zohrievajú teplé lúče vychádzajúceho slnka. Na stvárnenie členitého a drsného georeliéfu Súľovských skál som vo veľkej miere využila modelovaciu 3D pastu. Skalné masívy a vyčnievajúce veže tak získali reálnu, hmatateľnú štruktúru, ktorá fyzicky vystupuje z plátna.',
+        price: 'Vypredané',
+        available: false
+      },
+      en: {
+        title: 'Morning Súľov Rocks',
+        size: '50 × 50 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'This painting captures a magical, quiet morning awakening in the Súľov Rocks – a unique landform of limestone pyramids, towers and rock windows. The scene is dominated by dense inversion fog from which sharp rock formations rise, while the distant horizon is already warmed by sunrise. Modeling 3D paste was used extensively on the rugged georelief, so the massifs and protruding towers have a real, tactile structure that physically rises from the canvas.',
+        price: 'Sold',
+        available: false
+      }
+    },
     'lev': {
       sk: {
         title: 'Neohrozený pohľad',
