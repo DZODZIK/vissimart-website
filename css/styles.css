@@ -252,6 +252,15 @@ a {
   letter-spacing: -0.02em;
 }
 
+.hero-logo {
+  width: min(420px, 82vw);
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
 .hero .tagline {
   font-family: var(--font-serif);
   font-size: clamp(1.2rem, 3vw, 1.6rem);
