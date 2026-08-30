@@ -276,6 +276,24 @@ document.addEventListener('DOMContentLoaded', () => {
         available: true
       }
     },
+    'telgart': {
+      sk: {
+        title: 'Večer v Telgárte',
+        size: '60 × 60 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Tento obraz zachytáva jednu z najfotogenickejších technických pamiatok Slovenska – ikonický Chmarošský viadukt v Telgárte, zasadený do čarovnej, upokojujúcej večernej atmosféry. Ústredným motívom sú monumentálne kamenné oblúky, ktoré sa hrdo týčia nad horskou lúkou, zatiaľ čo obloha hrá nádhernými pastelovými odtieňmi ružovej a fialovej pri zapadajúcom slnku. V popredí dynamicky preteká horský potok, ktorý je lemovaný bohatou zeleňou a veľkými listami lopúchov. Pri tomto diele som modelovaciu 3D pastu použila výlučne na stvárnenie samotného viaduktu. Vďaka tomu jeho hrubá, kamenná štruktúra reálne a hmatateľne vystupuje z plátna, čím vytvára úžasný priestorový kontrast k jemnej, hladkej klasickej maľbe okolitej prírody, lúky a tečúcej vody.',
+        price: '395 €',
+        available: true
+      },
+      en: {
+        title: 'Evening in Telgárt',
+        size: '60 × 60 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'This painting captures one of Slovakia’s most photogenic technical monuments – the iconic Chmarošský viaduct in Telgárt, set in a magical, calming evening atmosphere. The central motif is the monumental stone arches rising proudly above a mountain meadow, while the sky plays in beautiful pastel pinks and violets at sunset. In the foreground a mountain stream flows dynamically, lined with lush greenery and large burdock leaves. Modeling 3D paste was used exclusively for the viaduct itself, so its rough stone structure rises from the canvas and contrasts with the smooth classical painting of the surrounding nature, meadow and water.',
+        price: '395 €',
+        available: true
+      }
+    },
     'lev': {
       sk: {
         title: 'Neohrozený pohľad',
