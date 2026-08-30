@@ -294,6 +294,24 @@ document.addEventListener('DOMContentLoaded', () => {
         available: true
       }
     },
+    'ostrva': {
+      sk: {
+        title: 'Pod masívom Ostrvy',
+        size: '50 × 70 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Tento obraz zachytáva úchvatnú tatranskú scenériu priamo zo sedla pod Ostrvou, s výhľadom do celej Mengusovskej doliny, kde dominuje farebná hladina Popradského plesa, na brehu usadená Chata pri Popradskom plese a presný detail tiahnucej sa Tatranskej magistrály. Atmosféru diela určuje jesenná nálada. Výrazným prvkom maľby je hmatateľná hĺbka, ktorú som dosiahla použitím modelovacej 3D pasty. Drsná štruktúra žulových stien a skalných blokov fyzicky vystupuje z plátna. Pri dobrom dennom svetle alebo bočnom osvetlení z lampy v miestnosti začnú tieto vystupujúce časti vrhať skutočné tiene, vďaka čomu obraz pod vplyvom svetla mení svoju dynamiku a prináša do interiéru autentickú, surovú atmosféru jesennej tatranskej prírody.',
+        price: '320 €',
+        available: true
+      },
+      en: {
+        title: 'Below the Ostrva Massif',
+        size: '50 × 70 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'This painting captures a breathtaking Tatra scene from the saddle below Ostrva, looking into the whole Mengusovská Valley, dominated by the colourful surface of Popradské pleso, the mountain chalet on the shore and the precise line of the Tatranská magistrála trail. The mood is autumn. A distinctive element is tactile depth from modeling 3D paste. The rough structure of granite walls and rock blocks physically rises from the canvas. In good daylight or side lamp light these raised parts cast real shadows, so the painting changes with the light and brings an authentic, raw atmosphere of autumn Tatra nature into the interior.',
+        price: '320 €',
+        available: true
+      }
+    },
     'lev': {
       sk: {
         title: 'Neohrozený pohľad',
