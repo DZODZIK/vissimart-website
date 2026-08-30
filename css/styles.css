@@ -789,6 +789,13 @@ a {
   color: var(--color-gold);
 }
 
+.footer-legal-id {
+  margin: 0.85rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  line-height: 1.45;
+}
+
 .footer-bottom {
   max-width: 1200px;
   margin: 2.5rem auto 0;
