@@ -144,6 +144,10 @@ a {
   line-height: 1;
 }
 
+.logo-art {
+  color: #e8c547;
+}
+
 .site-footer .logo {
   font-size: 1.15rem;
   letter-spacing: 0.12em;
