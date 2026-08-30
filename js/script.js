@@ -312,6 +312,24 @@ document.addEventListener('DOMContentLoaded', () => {
         available: true
       }
     },
+    'drazovce': {
+      sk: {
+        title: 'Nitriansky maják v búrke (Drážovský kostolík)',
+        size: '60 × 60 cm',
+        technique: 'Akryl a modelovacia 3D pasta na maliarskom plátne',
+        desc: 'Tento obraz zachytáva jeden z najfotogenickejších a najemotívnejších symbolov Slovenska – románsky Kostol svätého Michala Archanjela v Drážovciach, známy ako Drážovský kostolík. Malebná stavba osamotene sa tiahnuca na kopci nad Nitrou pôsobí v scenérii zapadajúceho slnka ako skutočný maják v rozbúrenom oceáne. Oblohe dominujú dramatické mračná, ktoré pretína blesk, a silný kontrast podvečerných tieňov s teplým svetlom vyžarujúcim z kostolíka. Na stvárnenie samotných historických múrov kostolíka som využila modelovaciu 3D pastu, vďaka ktorej reliéf fyzicky vystupuje z plátna. Keď si obraz zavesíte do interiéru a dopadne naň prirodzené denné svetlo alebo večerné bočné osvetlenie z lampy, táto 3D štruktúra ožije. Reliéf začne vrhať jemné tiene, čím obraz získava jedinečnú priestorovú hĺbku a prináša do miestnosti silnú, tajuplnú a ochrannú atmosféru tohto historického miesta.',
+        price: 'Vypredané',
+        available: false
+      },
+      en: {
+        title: 'Nitra Lighthouse in the Storm (Drážovce Church)',
+        size: '60 × 60 cm',
+        technique: 'Acrylic and modeling 3D paste on canvas',
+        desc: 'This painting captures one of Slovakia’s most photogenic and emotional symbols – the Romanesque Church of St Michael the Archangel in Drážovce, known as Drážovský kostolík. The small building standing alone on the hill above Nitra at sunset looks like a true lighthouse in a stormy ocean. The sky is dominated by dramatic clouds cut by lightning, and a strong contrast of evening shadows with warm light radiating from the church. Modeling 3D paste was used on the historic walls so the relief physically rises from the canvas. In daylight or evening side light the 3D structure comes alive, casts gentle shadows, and brings a mysterious, protective atmosphere of this historic place into the room.',
+        price: 'Sold',
+        available: false
+      }
+    },
     'lev': {
       sk: {
         title: 'Neohrozený pohľad',
