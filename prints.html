@@ -96,32 +96,34 @@
         <p>Email: <a href="mailto:vissimartsk@gmail.com">vissimartsk@gmail.com</a></p>
         <p>Instagram: <a href="https://www.instagram.com/vissim_art/" target="_blank" rel="noopener">@vissim_art</a></p>
       </div>
-      <form class="contact-form" id="contact-form">
+      <form class="contact-form" id="contact-form" action="send.php" method="post">
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
         <label><span data-lang="sk">Meno</span><span data-lang="en">Name</span>
-          <input required name="name">
+          <input required name="name" maxlength="120">
         </label>
         <label>Email
-          <input required type="email" name="email">
+          <input required type="email" name="email" maxlength="180">
         </label>
         <label><span data-lang="sk">Predmet</span><span data-lang="en">Subject</span>
           <select name="subject">
-            <option value="commission"><span data-lang="sk">Objednávka na mieru</span></option>
-            <option value="print">Print</option>
-            <option value="interest"><span data-lang="sk">Záujem o originál</span></option>
+            <option value="commission">Objednávka na mieru / Custom order</option>
+            <option value="print" selected>Print</option>
+            <option value="interest">Záujem o originál / Interest in original</option>
           </select>
         </label>
         <label><span data-lang="sk">Správa</span><span data-lang="en">Message</span>
-          <textarea required name="message" rows="6"></textarea>
+          <textarea required name="message" rows="6" maxlength="5000"></textarea>
         </label>
         <label class="check">
-          <input required type="checkbox">
+          <input required type="checkbox" name="consent" value="1">
           <span data-lang="sk">Súhlasím so spracovaním údajov podľa GDPR a beriem na vedomie VOP.</span>
           <span data-lang="en">I agree to data processing under GDPR and acknowledge the terms (VOP).</span>
         </label>
         <button class="btn" type="submit"><span data-lang="sk">Odoslať správu</span><span data-lang="en">Send message</span></button>
+        <p class="form-error" id="form-error" hidden></p>
         <p class="form-ok" id="form-ok" hidden>
-          <span data-lang="sk">Ďakujem. Napíšte mi aj na vissimartsk@gmail.com.</span>
-          <span data-lang="en">Thank you. You can also write to vissimartsk@gmail.com.</span>
+          <span data-lang="sk">Ďakujem, správa bola odoslaná. Ozvem sa vám e-mailom.</span>
+          <span data-lang="en">Thank you, your message was sent. I will reply by e-mail.</span>
         </p>
       </form>
     </div>

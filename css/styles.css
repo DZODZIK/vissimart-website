@@ -731,7 +731,15 @@ a {
   font-weight: 400;
 }
 .contact-form .check input { width: auto; margin-top: 0.25rem; }
+.contact-form .hp {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
 .form-ok { margin-top: 1rem; color: var(--color-accent); }
+.form-error { margin-top: 0.75rem; color: #9b2c2c; }
 
 .form-group {
   margin-bottom: 1.25rem;

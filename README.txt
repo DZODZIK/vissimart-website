@@ -18,8 +18,22 @@ contact.html    Kontakt
 gdpr.html       Ochrana osobných údajov
 vop.html        Všeobecné obchodné podmienky
 
-Kontakt
--------
-Mgr. Simona Visocká
-vissimartsk@gmail.com
-Instagram @vissim_art
+Kontaktný formulár (dôležité)
+----------------------------
+Formulár posiela e-maily cez súbor send.php na Gmail:
+  vissimartsk@gmail.com
+
+Aby to na Websupport fungovalo, musí existovať schránka na vašej doméne.
+Websupport neodošle správu, ak From adresa neexistuje.
+
+1. Vo Websupport → E-maily vytvorte schránku:
+     info@vissimart.sk
+   (môže presmerovať na vissimartsk@gmail.com)
+
+2. Nahrajte celý web vrátane send.php do priečinka web.
+
+3. Na webe vyplňte formulár skúšobnou správou a skontrolujte Gmail
+   (aj priečinok Spam).
+
+Ak chcete inú From schránku, upravte v send.php riadok:
+  $from = 'info@vissimart.sk';

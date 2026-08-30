@@ -569,15 +569,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const ok = document.getElementById('form-ok');
-      form.querySelectorAll('label, button[type="submit"]').forEach((el) => {
-        if (el.id !== 'form-ok') el.style.display = 'none';
-      });
+      const okEl = document.getElementById('form-ok');
+      const errEl = document.getElementById('form-error');
       const btn = form.querySelector('button[type="submit"]');
-      if (btn) btn.style.display = 'none';
-      if (ok) ok.hidden = false;
+      if (errEl) {
+        errEl.hidden = true;
+        errEl.textContent = '';
+      }
+      if (btn) btn.disabled = true;
+      try {
+        const res = await fetch('send.php', { method: 'POST', body: new FormData(form) });
+        let json = {};
+        try { json = await res.json(); } catch (err) { json = {}; }
+        if (res.ok && json.ok) {
+          form.querySelectorAll('label, button[type="submit"]').forEach((el) => {
+            el.style.display = 'none';
+          });
+          if (okEl) okEl.hidden = false;
+        } else {
+          if (errEl) {
+            errEl.textContent = json.error || 'Správu sa nepodarilo odoslať. Napíšte na vissimartsk@gmail.com.';
+            errEl.hidden = false;
+          }
+          if (btn) btn.disabled = false;
+        }
+      } catch (err) {
+        if (errEl) {
+          errEl.textContent = 'Správu sa nepodarilo odoslať. Napíšte na vissimartsk@gmail.com.';
+          errEl.hidden = false;
+        }
+        if (btn) btn.disabled = false;
+      }
     });
   }
 
