@@ -449,4 +449,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if (ok) ok.hidden = false;
     });
   }
+
+  function addWatermark(el) {
+    if (!el || el.querySelector(':scope > .wm')) return;
+    const wm = document.createElement('img');
+    wm.src = 'watermark.png';
+    wm.alt = '';
+    wm.className = 'wm';
+    wm.draggable = false;
+    el.appendChild(wm);
+  }
+  document.querySelectorAll('.art-card-image, .modal-image').forEach(addWatermark);
+  document.querySelectorAll('.art-card > img').forEach((img) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'art-card-image';
+    img.replaceWith(wrap);
+    wrap.appendChild(img);
+    addWatermark(wrap);
+  });
 });

@@ -851,3 +851,21 @@ a {
 }
 .cookie-banner p { font-size: 0.88rem; margin-bottom: 0.75rem; }
 .cookie-banner .btn { font-size: 0.85rem; padding: 0.45rem 1rem; }
+
+.wm {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  width: 48px;
+  height: auto;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.82;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+.modal-image .wm {
+  width: 64px;
+  left: 10px;
+  bottom: 10px;
+}
+
