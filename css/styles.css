@@ -854,19 +854,19 @@ a {
 
 .wm {
   position: absolute;
-  left: 8px;
-  bottom: 8px;
-  width: 48px;
+  left: 6px;
+  bottom: 6px;
+  width: 22px;
   height: auto;
   pointer-events: none;
   z-index: 4;
-  opacity: 0.82;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+  opacity: 0.75;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
 }
 .modal-image .wm {
-  width: 64px;
-  left: 10px;
-  bottom: 10px;
+  width: 28px;
+  left: 8px;
+  bottom: 8px;
 }
 
 .artwork-notice {
