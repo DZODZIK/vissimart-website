@@ -463,6 +463,9 @@ a {
   gap: 1rem;
   margin-top: 1.5rem;
 }
+.prints-grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .prints-grid .art-card {
   min-width: 0;
 }
