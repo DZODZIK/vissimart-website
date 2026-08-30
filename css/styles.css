@@ -840,9 +840,10 @@ a {
 
 .footer-legal-id {
   margin: 0.85rem 0 0;
-  font-size: 0.85rem;
-  opacity: 0.75;
+  font-size: 0.9rem;
+  opacity: 0.8;
   line-height: 1.45;
+  color: inherit;
 }
 
 .footer-bottom {
