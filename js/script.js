@@ -366,6 +366,24 @@ document.addEventListener('DOMContentLoaded', () => {
         available: true
       }
     },
+    'tuzba': {
+      sk: {
+        title: 'Túžba matky',
+        size: '50 × 50 cm',
+        technique: 'Klasická akrylová maľba na maliarskom plátne',
+        desc: 'Upozornenie: Na rozdiel od mnohých mojich diel, tento konkrétny obraz neobsahuje vystupujúcu 3D reliéfnu štruktúru. Ide o klasickú, úplne hladkú akrylovú maľbu. Tento obraz nesie veľmi osobný, silný a hlboko emotívny odkaz. Ústredným motívom je portrét ženy so zaklonenou hlavou, no toto gesto nevyjadruje únavu či vyčerpanie, ale hlbokú vnútornú túžbu. Je to túžba po spoločnosti, po chvíľke ticha len pre seba, po možnosti cítiť sa opäť naplno ako žena. Je to ten tichý výkrik duše, ktorý dôverne pozná snáď každá mama. Dielo je nádhernou a citlivou pripomienkou toho, že aj v tej najväčšej a najobetavejšej oddanosti k rodine netreba zabúdať na seba. Vizuálne obraz stavia na podmanivom kontraste. Monochromatickú, detailne a jemne vytieňovanú tvár s bohatými tmavými vlasmi oživujú žiarivé zlaté pramene, ktoré symbolizujú vnútornú silu, krásu a prebúdzajúcu sa ženskú energiu. Celú kompozíciu nádherne uzatvárajú abstraktné strieborné prvky v pozadí, ktoré dielu dodávajú eleganciu, dynamiku a jemný nádych luxusu.',
+        price: 'Vypredané',
+        available: false
+      },
+      en: {
+        title: 'A Mother’s Longing',
+        size: '50 × 50 cm',
+        technique: 'Classical acrylic painting on canvas',
+        desc: 'Notice: Unlike many of my works, this painting does not have a raised 3D relief structure. It is a classical, completely smooth acrylic painting. It carries a very personal, strong and deeply emotional message. The central motif is a portrait of a woman with her head tilted back – a gesture not of exhaustion, but of deep inner longing. A longing for company, for a moment of silence for herself, for feeling fully a woman again. It is the quiet cry of the soul that almost every mother knows. The work is a sensitive reminder that even in the greatest devotion to family one must not forget oneself. Visually it is built on contrast: a monochromatic, finely shaded face with rich dark hair is brought to life by glowing golden strands that symbolise inner strength, beauty and awakening feminine energy. Abstract silver elements in the background close the composition with elegance, dynamism and a hint of luxury.',
+        price: 'Sold',
+        available: false
+      }
+    },
     'lev': {
       sk: {
         title: 'Neohrozený pohľad',
