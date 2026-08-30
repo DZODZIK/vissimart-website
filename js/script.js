@@ -426,6 +426,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPhoto = 0;
 
   function photoList(id) {
+    const card = document.querySelector('[data-art-id="' + id + '"]');
+    if (card) {
+      const thumbs = [...card.querySelectorAll('.art-thumbs img')].map((img) => img.getAttribute('src')).filter(Boolean);
+      if (thumbs.length) return thumbs;
+    }
     return [
       'images/' + id + '.jpg',
       'images/' + id + '-d2.jpg',
